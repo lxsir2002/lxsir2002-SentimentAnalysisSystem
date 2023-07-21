@@ -1,12 +1,15 @@
-package com.emotion.service;
+package com.emotion.tools;
+
 
 import java.io.IOException;
 
-public class Test {
-    public static void main(String[] args) {
+
+
+public final  class TodoPython {
+    public static void doPython(String path){
         try {
             // 构建进程
-            ProcessBuilder pb = new ProcessBuilder("D:/Anaconda/envs/pyt/python.exe", "SentimentClassification/WeiboComments/DataProcessing/DataShuffle_10.py");
+            ProcessBuilder pb = new ProcessBuilder("D:/Anaconda/envs/pyt/python.exe", path);
             pb.redirectErrorStream(true);
 
             // 启动进程
@@ -26,5 +29,7 @@ public class Test {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
+
     }
+
 }
