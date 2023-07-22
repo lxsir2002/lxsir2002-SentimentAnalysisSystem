@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue</title>
+<!--  引入vue axios-->
+  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+  <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <input v-model="text" placeholder="edit me" />
+  <button v-on:click="getText(text)">分析情感</button>
+  <p>emotion is: {{ emotion }}</p>
+</div>
+<script type = "text/javascript">
+
+   new Vue({
+    el: '#app',
+    data : {
+         text:"",
+         emotion:""
+    },
+    created:{
+
+    },
+    methods:{
+        getText: function (mes) {
+
+          axios({
+            method:"GET",
+            url:"/class/{{mes}}"
+          }).then(resp =>{
+            this.em = resp.data
+          })
+        }
+
+
+
+
+    }
+  })
+</script>
+</body>
+</html>
