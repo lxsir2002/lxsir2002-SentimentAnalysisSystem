@@ -3,9 +3,9 @@
     border: none;
     padding: 1rem;
     font-size: 1rem;
-    width: 13em;
+    width: 30em;
     border-radius: 1rem;
-    color: lightcoral;
+    color: black;
     box-shadow: 0 0.4rem #dfd9d9;
     cursor: pointer;
 }
@@ -29,6 +29,7 @@
     border-radius: 10px;
     box-shadow: 5px 5px 0px #000;
     transition: all 0.3s ease;
+   margin-top: 2rem;
 }
 
 .comic-button:hover {
@@ -42,5 +43,29 @@
     background-color: #fcf414;
     box-shadow: none;
     transform: translateY(4px);
+}
+
+
+#app{
+
+    text-align: center; /*让div内部文字居中*/
+    border-radius: 20px;
+    width: 600px;
+    height: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+
+#em{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 6rem;
 }
 

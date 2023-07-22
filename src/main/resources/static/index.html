@@ -8,14 +8,13 @@
   <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
   <link href="css/in_bu.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body background="background.jpg">
 <div id="app">
-  <p>emotion is: {{ emotion }}</p>
+  <p id="em">emotion is: {{ emotion }}</p>
   <div class="input-wrapper">
     <input v-model="text" placeholder="Type here..." name="text" class="input">
-    <button v-on:click="getText(text)" class="comic-button"  >Click me!</button>
   </div>
-
+  <button v-on:click="getText(text)" class="comic-button"  >Click me!</button>
 </div>
 <script type = "text/javascript">
 
