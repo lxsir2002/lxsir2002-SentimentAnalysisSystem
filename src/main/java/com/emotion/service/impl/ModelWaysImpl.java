@@ -12,8 +12,10 @@ public class ModelWaysImpl implements ModelWays {
 
     @Override
     public String GetEmotion(String text) throws IOException, InterruptedException {
-        String emotion =  TodoPython.useModel("path", text);
+        String emotion = TodoPython.doPython("SentimentClassification/Demo.py", text);
+        System.out.println(emotion);
         return emotion;
+
     }
 
 }

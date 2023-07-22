@@ -17,10 +17,11 @@ public class ModelController {
 
     @GetMapping("/{text}")
     public String AnalyzeEmotion(@PathVariable String text) throws IOException, InterruptedException {
-        System.out.println(text);
-//        String emotion = modelWays.GetEmotion(text);
 
-         return "lx";
+        System.out.println(text);
+        String emotion = modelWays.GetEmotion(text);
+
+        return emotion;
     }
 
 }

@@ -9,7 +9,14 @@
   <link href="css/in_bu.css" rel="stylesheet" type="text/css">
 </head>
 <body background="background.jpg">
-<div id="app">
+<div id="app" class="all">
+  <div class="loadingFive">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <p id="em">emotion is: {{ emotion }}</p>
   <div class="input-wrapper">
     <input v-model="text" placeholder="Type here..." name="text" class="input">
@@ -28,15 +35,22 @@
 
     },
     methods:{
-        getText: function (text) {
+
+       getText: function (text) {
+         document.querySelector(".loadingFive").style.display = "block"
           axios({
             method:"GET",
             url:"/class/"+text
           }).then(resp =>{
+
             console.log(resp)
             this.emotion = resp.data
+            document.querySelector(".loadingFive").style.display = "none"
+
           })
-        }
+        },
+
+
 
     }
   })
