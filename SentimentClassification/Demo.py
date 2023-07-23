@@ -31,15 +31,14 @@ class useModdel:
         embeddings = outputs.last_hidden_state
         embeddings = embeddings.to(device)
 
-        model = torch.load("SentimentClassification/model.pth")
+        model = torch.load("SentimentClassification/model.pth", map_location=torch.device('cpu'))
         out = model(embeddings)
         maxIdex = torch.argmax(out, dim=1)
         if (maxIdex == 0):
-            return 0
+            return "Positive"
         elif (maxIdex == 1):
-            return 1
-        elif (maxIdex == 2):
-            return 2
+            return "Negative"
+
 
 
 

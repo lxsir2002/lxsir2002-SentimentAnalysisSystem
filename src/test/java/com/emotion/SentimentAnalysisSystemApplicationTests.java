@@ -13,8 +13,8 @@ class SentimentAnalysisSystemApplicationTests {
    @Autowired
     ModelWays modelWays;
     @Test
-    void testInitializeCsv() throws IOException, InterruptedException {
-        modelWays.GetEmotion("我好伤心");
+    void testDoPython() throws IOException, InterruptedException {
+         modelWays.GetEmotion("我好高兴");
     }
 
 }
